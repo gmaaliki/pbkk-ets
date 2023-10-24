@@ -20,3 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/index', [App\Http\Controllers\BarangController::class, 'index'])->name('barang.index');
+Route::get('/form', [App\Http\Controllers\BarangController::class, 'create'])->name('barang.create');
+Route::post('/submit', [App\Http\Controllers\BarangController::class, 'store'])->name('barang.store');
+Route::get('/delete/{id}', [App\Http\Controllers\BarangController::class, 'destroy'])->name('barang.delete');
+Route::get('/edit/{id}', [App\Http\Controllers\BarangController::class, 'edit'])->name('barang.edit');
